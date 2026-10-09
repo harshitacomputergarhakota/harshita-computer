@@ -40,6 +40,16 @@ footer{text-align:center;background:#102e52;color:white;padding:20px 12px;margin
  .grid{grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))}
  .card{min-height:130px}
 }
+
+/* Top service overview */
+.service-intro{background:#fff;border:1px solid #dce6f2;border-radius:16px;padding:20px;margin:0 0 22px;box-shadow:0 4px 16px #18365c0b}
+.service-intro h2{margin:0 0 8px}.service-intro .lead{line-height:1.7;color:#42536a;margin:0 0 14px}
+.service-tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(185px,100%),1fr));gap:11px}
+.service-tile{border:1px solid #e2e9f2;border-radius:12px;padding:13px;background:linear-gradient(145deg,#fff,#f6f9ff);min-width:0}
+.service-icon{width:56px;height:56px;border-radius:14px;background:#e9f2ff;display:flex;align-items:center;justify-content:center;font-size:31px;margin-bottom:9px}
+.service-tile h3{font-size:16px;color:#173e6e;margin:0 0 6px}.service-tile p{font-size:13px;line-height:1.5;color:#536174;margin:0}
+.service-intro .visit{background:#fff2e3;border-left:4px solid var(--orange);border-radius:8px;padding:12px;margin-top:15px;line-height:1.6;font-weight:bold}
+
 </style>
 </head>
 <body>
@@ -50,6 +60,7 @@ footer{text-align:center;background:#102e52;color:white;padding:20px 12px;margin
   <div>सरकारी अस्पताल के पास, गढ़ाकोटा, मध्य प्रदेश</div>
 </header>
 <nav aria-label="सभी सेवा श्रेणियाँ">
+<a href="#service-overview">हमारी सभी सेवाएँ</a>
 <a href="#jobs">नौकरी, भर्ती और आवेदन</a>
 <a href="#pan">PAN कार्ड सेवाएँ</a>
 <a href="#govt">सरकारी सेवाएँ और नागरिक सुविधाएँ</a>
@@ -70,6 +81,34 @@ footer{text-align:center;background:#102e52;color:white;padding:20px 12px;margin
 </nav>
 <main class="wrap">
 <div class="notice"><b>महत्वपूर्ण सूचना:</b> यह हर्षिता कम्प्यूटर का लिंक-पोर्टल है। बटन दबाने पर संबंधित वेबसाइट खुलेगी। आवेदन/भुगतान करने से पहले वेबसाइट का नाम और URL जाँचें। सरकारी वेबसाइटों पर ही अपनी निजी जानकारी दर्ज करें। कुछ सेवाओं के लिए अधिकृत ऑपरेटर ID या अलग लॉगिन जरूरी हो सकता है।</div>
+
+<section id="service-overview" class="service-intro">
+<h2>हर्षिता कम्प्यूटर पर उपलब्ध सभी ऑनलाइन सेवाएँ</h2>
+<p class="lead">हमारी दुकान पर ऑनलाइन से संबंधित अनेक काम एक ही जगह पर करवाएँ। फॉर्म भरने, दस्तावेज़ अपलोड करने, फोटो तैयार करने, प्रिंट/फोटोकॉपी, आवेदन की स्थिति देखने और उपलब्ध सरकारी पोर्टलों पर आवेदन करने में सहायता दी जाती है। सेवा की उपलब्धता संबंधित विभाग के नियमों, पोर्टल और आवश्यक दस्तावेज़ों पर निर्भर करेगी।</p>
+<div class="service-tiles">
+<div class="service-tile"><div class="service-icon">🏦</div><h3>बैंकिंग व भुगतान</h3><p>उपलब्ध बैंकिंग सेवाएँ, पैसे भेजना/निकालना, बिल भुगतान और बैंक खाते से जुड़ी ऑनलाइन सहायता।</p></div>
+<div class="service-tile"><div class="service-icon">🪪</div><h3>आधार कार्ड</h3><p>आधार डाउनलोड/स्थिति और उपलब्ध आधार सेवाओं की जानकारी; बायोमेट्रिक सेवाएँ केवल अधिकृत व्यवस्था से।</p></div>
+<div class="service-tile"><div class="service-icon">💳</div><h3>PAN कार्ड</h3><p>नया PAN आवेदन, सुधार, PAN स्थिति और उपलब्ध ई-PAN सेवाओं में सहायता।</p></div>
+<div class="service-tile"><div class="service-icon">🗳️</div><h3>वोटर ID कार्ड</h3><p>नया मतदाता पंजीकरण, सुधार, वोटर सूची में नाम खोजने और e-EPIC की उपलब्ध सेवाएँ।</p></div>
+<div class="service-tile"><div class="service-icon">❤️‍🩹</div><h3>हेल्थ कार्ड</h3><p>आयुष्मान भारत कार्ड, ABHA हेल्थ ID और e-Sanjeevani जैसी सेवाओं की ऑनलाइन सहायता।</p></div>
+<div class="service-tile"><div class="service-icon">👷</div><h3>ई-श्रम व श्रमिक कार्ड</h3><p>e-Shram पंजीकरण/अपडेट और उपलब्ध श्रमिक योजनाओं की जानकारी।</p></div>
+<div class="service-tile"><div class="service-icon">📋</div><h3>समग्र, संबल व राशन</h3><p>समग्र ID, संबल योजना, राशन/PDS और उपलब्ध परिवार/लाभार्थी सेवाएँ।</p></div>
+<div class="service-tile"><div class="service-icon">👨‍🌾</div><h3>किसान सेवाएँ</h3><p>PM-KISAN, किसान पंजीयन, e-KYC और उपलब्ध कृषि योजनाओं के आवेदन/स्थिति में मदद।</p></div>
+<div class="service-tile"><div class="service-icon">🧾</div><h3>सरकारी प्रमाणपत्र व फॉर्म</h3><p>आय, जाति, निवास और अन्य उपलब्ध प्रमाणपत्र/ऑनलाइन आवेदन—राज्य पोर्टल पर उपलब्धता अनुसार।</p></div>
+<div class="service-tile"><div class="service-icon">💼</div><h3>EPFO / PF / पेंशन</h3><p>UAN, PF पासबुक, क्लेम स्थिति और पेंशन से जुड़े आधिकारिक पोर्टल इस्तेमाल करने में सहायता।</p></div>
+<div class="service-tile"><div class="service-icon">🎓</div><h3>छात्रवृत्ति व शिक्षा</h3><p>स्कॉलरशिप फॉर्म, कॉलेज फीस, परीक्षा आवेदन, प्रवेश पत्र और परिणाम देखने में सहायता।</p></div>
+<div class="service-tile"><div class="service-icon">🧑‍💻</div><h3>CSC व कियोस्क सेवाएँ</h3><p>CSC/MPOnline और अन्य ऑपरेटर पोर्टल के लिंक; लॉगिन केवल अधिकृत ID से।</p></div>
+<div class="service-tile"><div class="service-icon">🚆</div><h3>रेलवे व बस टिकट</h3><p>उपलब्ध अधिकृत पोर्टलों से टिकट बुकिंग/आरक्षण की जानकारी और सहायता।</p></div>
+<div class="service-tile"><div class="service-icon">🚘</div><h3>ड्राइविंग लाइसेंस व वाहन</h3><p>लर्निंग/ड्राइविंग लाइसेंस, वाहन सेवाएँ, चालान और परिवहन पोर्टल के फॉर्म।</p></div>
+<div class="service-tile"><div class="service-icon">🖨️</div><h3>फोटो, प्रिंट व PDF</h3><p>पासपोर्ट साइज फोटो, फोटो कॉपी, फोटो प्रिंट, लेमिनेशन, PDF मर्ज/कंप्रेस और स्कैन।</p></div>
+<div class="service-tile"><div class="service-icon">⚡</div><h3>बिल व ऑनलाइन आवेदन</h3><p>बिजली बिल, उपयोगिता भुगतान, ऑनलाइन आवेदन, पंजीयन और आवेदन स्थिति की उपलब्ध सेवाएँ।</p></div>
+<div class="service-tile"><div class="service-icon">🧑‍💼</div><h3>नौकरी व भर्ती फॉर्म</h3><p>सरकारी नौकरी आवेदन, रोजगार पंजीयन, प्रवेश पत्र, परिणाम और भर्ती संबंधी जानकारी।</p></div>
+<div class="service-tile"><div class="service-icon">🪪</div><h3>PVC कार्ड व फोटो एल्बम</h3><p>उपलब्ध डिज़ाइन के अनुसार PVC कार्ड प्रिंट, फोटो कॉपी, फोटो एल्बम और दस्तावेज़ प्रिंटिंग।</p></div>
+</div>
+<div class="visit">ये सभी काम आप हर्षिता कम्प्यूटर, सरकारी अस्पताल के पास, गढ़ाकोटा पर आकर व्यवस्थित तरीके से करवा सकते हैं। संपर्क: प्रो. पवन पटेल — 9691902304।</div>
+<p class="small">नोट: प्रत्येक सेवा हर समय उपलब्ध होना सुनिश्चित नहीं है। विभागीय पोर्टल, पात्रता, आवश्यक दस्तावेज़ और अधिकृत लॉगिन के अनुसार ही काम किया जाता है। अपनी OTP/PIN किसी अनधिकृत व्यक्ति से साझा न करें।</p>
+</section>
+
 <input id="search" class="search" type="search" placeholder="🔎 सेवा खोजें — जैसे Voter, Health Card, EPFO, PF, PAN, रेलवे, आधार..." oninput="filterCards()">
 <section id="jobs"><h2>नौकरी, भर्ती और आवेदन</h2><div class="grid">
 <div class="card"><span class="tag">सरकारी भर्ती</span><h3>MPESB — मध्य प्रदेश कर्मचारी चयन मंडल</h3><p>मध्य प्रदेश की भर्ती परीक्षाएँ, आवेदन, प्रवेश पत्र और परिणाम।</p><a class="btn" target="_blank" rel="noopener" href="https://esb.mp.gov.in/">वेबसाइट खोलें ↗</a></div>
