@@ -87,32 +87,16 @@ nav a:hover{transform:translateX(3px);filter:saturate(1.2);box-shadow:0 4px 10px
 
 </style>
 </head>
-<body class="verify-locked">
+<body>
 
-<div id="verifyGate" role="dialog" aria-modal="true" aria-labelledby="verifyTitle">
- <div class="verify-box">
-  <div class="verify-mark" aria-hidden="true">✓</div>
-  <h2 id="verifyTitle">मानव सत्यापन | Human Verification</h2>
-  <p>वेबसाइट खोलने के लिए स्लाइडर को पूरा दाईं ओर खिसकाएँ।<br>Slide fully to the right to continue.</p>
-  <div class="slide-track" id="slideTrack" aria-label="Slide to verify">
-   <div class="slide-fill" id="slideFill"></div>
-   <span class="slide-label" id="slideLabel">स्लाइड करके सत्यापित करें</span>
-   <div class="slide-handle" id="slideHandle" role="button" tabindex="0" aria-label="Slide right to verify">➜</div>
-  </div>
-  <p class="verify-note">यह साधारण स्लाइड गेट है। मजबूत बॉट सुरक्षा के लिए सर्वर-साइड CAPTCHA सत्यापन जरूरी है।</p>
+<div id="welcomeGate" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle" style="position:fixed;inset:0;z-index:99999;background:linear-gradient(135deg,#081930f5,#13477bf5);display:flex;align-items:center;justify-content:center;padding:18px">
+ <div style="width:min(520px,100%);background:#fff;border-radius:24px;padding:32px 24px;text-align:center;box-shadow:0 18px 55px #0005;color:#182538;border:3px solid #f28c28">
+  <div style="width:76px;height:76px;border-radius:22px;background:linear-gradient(135deg,#ff8a00,#e52e71,#6750d8);color:white;display:grid;place-items:center;font-size:34px;font-weight:bold;margin:0 auto 16px">HC</div>
+  <h2 id="welcomeTitle" style="margin:0 0 10px;color:#123b70;font-size:clamp(22px,5vw,30px)">Welcome To Harshita Computer Garhakota</h2>
+  <p style="margin:0 0 24px;color:#526174;font-size:18px;font-weight:700">By Owner PAVAN PATEL</p>
+  <button id="enterPortal" type="button" style="border:0;border-radius:999px;padding:14px 30px;font-size:16px;font-weight:800;color:#fff;background:linear-gradient(100deg,#f28c28,#e52e71,#6750d8);box-shadow:0 8px 20px #6750d84a;cursor:pointer">Enter Portal&nbsp; ➜</button>
  </div>
 </div>
-
-<div id="welcomeGate" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle" style="display:none;position:fixed;inset:0;z-index:99998;background:linear-gradient(135deg,rgba(8,25,48,.96),rgba(73,48,168,.96),rgba(229,90,69,.94));align-items:center;justify-content:center;padding:18px">
- <div style="width:min(520px,100%);background:#fff;border-radius:24px;padding:32px 22px;text-align:center;box-shadow:0 18px 55px #0005;color:#182538">
-  <div style="font-size:48px;margin-bottom:10px">🌐</div>
-  <h1 id="welcomeTitle" style="font-size:clamp(25px,5vw,36px);line-height:1.25;margin:0 0 10px;color:#173e6e">Welcome To Harshita Computer</h1>
-  <h2 style="font-size:clamp(20px,4vw,28px);margin:0 0 8px;color:#c02675">Garhakota</h2>
-  <p style="font-size:18px;font-weight:800;margin:0 0 24px;color:#374151">by Owner PAVAN PATEL</p>
-  <button id="enterPortalBtn" type="button" style="border:0;border-radius:999px;padding:13px 28px;font-size:16px;font-weight:800;color:#fff;background:linear-gradient(100deg,#1767a6,#4930a8,#c02675);box-shadow:0 6px 18px #4930a855;cursor:pointer">Enter Portal →</button>
- </div>
-</div>
-
 <header>
   <h1>हर्षिता कम्प्यूटर</h1>
   <span class="brand-en">HARSHITA Computer</span>
@@ -389,23 +373,12 @@ nav a:hover{transform:translateX(3px);filter:saturate(1.2);box-shadow:0 4px 10px
 </div>
 <script>
 
-// Simple slider gate: a visual deterrent only, not a secure CAPTCHA.
+// Welcome screen: open the portal when the visitor taps the button.
 (function(){
- const gate=document.getElementById('verifyGate'), track=document.getElementById('slideTrack'), handle=document.getElementById('slideHandle'), fill=document.getElementById('slideFill'), label=document.getElementById('slideLabel');
- if(!gate||!track||!handle)return;
- let dragging=false,startX=0,startLeft=3,verified=false;
- const maxLeft=()=>Math.max(3,track.clientWidth-handle.offsetWidth-6);
- function setLeft(v){const max=maxLeft(),left=Math.max(3,Math.min(max,v));handle.style.left=left+'px';fill.style.width=(left+handle.offsetWidth)+'px';if(left>=max-2)unlock();}
- function unlock(){if(verified)return;verified=true;track.classList.add('verified');label.textContent='✓ सत्यापन सफल | Verified';handle.textContent='✓';handle.style.left=maxLeft()+'px';fill.style.width='100%';setTimeout(()=>{gate.remove();const welcome=document.getElementById('welcomeGate');if(welcome){welcome.style.display='flex';}else{document.body.classList.remove('verify-locked');}},450);}
- handle.addEventListener('pointerdown',e=>{if(verified)return;dragging=true;startX=e.clientX;startLeft=parseFloat(handle.style.left||'3');handle.setPointerCapture(e.pointerId);});
- handle.addEventListener('pointermove',e=>{if(dragging&&!verified)setLeft(startLeft+e.clientX-startX);});
- const stop=()=>{if(!dragging)return;dragging=false;if(!verified){handle.style.left='3px';fill.style.width='0';}};
- handle.addEventListener('pointerup',stop);handle.addEventListener('pointercancel',stop);
- handle.addEventListener('keydown',e=>{if(verified)return;if(e.key==='ArrowRight'){e.preventDefault();setLeft((parseFloat(handle.style.left)||3)+18)}if(e.key==='Home'){e.preventDefault();setLeft(3)}if(e.key==='End'){e.preventDefault();setLeft(maxLeft())}});
- window.addEventListener('resize',()=>{if(!verified)handle.style.left='3px';});
+ const gate=document.getElementById('welcomeGate');
+ const enter=document.getElementById('enterPortal');
+ if(enter&&gate){enter.addEventListener('click',()=>{gate.style.transition='opacity .25s ease';gate.style.opacity='0';setTimeout(()=>gate.remove(),260);});}
 })();
-
-document.getElementById('enterPortalBtn')?.addEventListener('click',()=>{const welcome=document.getElementById('welcomeGate');if(welcome)welcome.remove();document.body.classList.remove('verify-locked');});
 
 function filterCards(){
  const q=document.getElementById('search').value.trim().toLocaleLowerCase();
