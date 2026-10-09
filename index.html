@@ -3,158 +3,286 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="हर्षिता कम्प्यूटर गढ़ाकोटा - ऑनलाइन सेवाओं और सरकारी पोर्टलों का एकीकृत पोर्टल">
-<title>हर्षिता कम्प्यूटर | Online Service Portal</title>
+<title>हर्षिता कम्प्यूटर | ऑनलाइन सेवा पोर्टल</title>
 <style>
-:root{--primary:#0757b8;--secondary:#0b7a45;--accent:#ff8a00;--bg:#f3f7fb;--text:#172033;--card:#fff}
-*{box-sizing:border-box} body{margin:0;font-family:"Noto Sans Devanagari",Arial,sans-serif;background:var(--bg);color:var(--text)}
-header{background:linear-gradient(135deg,#063b83,#0878d1);color:#fff;padding:22px 16px;text-align:center;box-shadow:0 3px 15px #0002}
-header h1{margin:0;font-size:32px} header p{margin:7px 0 0;font-size:16px}
-.contact{margin-top:10px;font-weight:700}
-nav{position:sticky;top:0;z-index:10;background:#fff;padding:10px;box-shadow:0 2px 8px #0001;display:flex;gap:8px;overflow:auto}
-nav button{border:0;background:#edf4ff;color:#0757b8;padding:9px 13px;border-radius:20px;white-space:nowrap;cursor:pointer;font-weight:700}
-.container{max-width:1200px;margin:auto;padding:16px}
-.hero{background:var(--card);border-radius:18px;padding:18px;margin:10px 0 18px;box-shadow:0 5px 18px #0000000c}
-.hero h2{margin:0 0 7px;color:#0757b8}.hero p{margin:6px 0}
-.search{width:100%;padding:14px 16px;border:2px solid #dbe5f2;border-radius:13px;font-size:16px;outline:none}.search:focus{border-color:#0878d1}
-.section{margin:22px 0}.section h2{display:flex;align-items:center;gap:8px;font-size:23px;margin:0 0 12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px}
-.card{background:var(--card);border-radius:15px;padding:15px;border:1px solid #e2eaf3;box-shadow:0 4px 14px #0000000a;transition:.15s}
-.card:hover{transform:translateY(-2px);box-shadow:0 7px 20px #0002}.card h3{margin:0 0 6px;font-size:18px}.card p{font-size:13px;color:#637086;margin:0 0 12px;min-height:34px}
-.card a{display:inline-block;background:var(--primary);color:#fff;text-decoration:none;padding:9px 13px;border-radius:9px;font-weight:700;font-size:14px}
-.card a.alt{background:var(--secondary)}
-.badge{font-size:11px;background:#fff2df;color:#a95400;padding:4px 7px;border-radius:20px;float:right}
-.notice{background:#fff8e8;border-left:5px solid var(--accent);padding:12px;border-radius:10px;margin:15px 0;font-size:14px}
-footer{background:#10243e;color:#fff;text-align:center;padding:22px;margin-top:28px} footer a{color:#9ed1ff}
-.empty{display:none;text-align:center;padding:25px;color:#667}
-@media(max-width:600px){header h1{font-size:26px}.container{padding:10px}.grid{grid-template-columns:1fr 1fr}.card{padding:12px}.card h3{font-size:16px}.card p{font-size:12px}.card a{width:100%;text-align:center}}
-@media(max-width:390px){.grid{grid-template-columns:1fr}}
+:root{--blue:#123b70;--orange:#f28c28;--bg:#f3f6fb;--ink:#182538}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;background:var(--bg);color:var(--ink)}
+header{background:linear-gradient(120deg,#103565,#1767a6);color:white;padding:25px 16px;text-align:center}
+header h1{margin:0;font-size:clamp(27px,5vw,42px);letter-spacing:.3px}header p{margin:8px 0 0;font-size:16px}
+.contact{margin-top:12px;font-weight:bold;color:#fff4dc}
+nav{background:#fff;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:7px;padding:14px 10px;box-shadow:2px 0 10px #0001;position:fixed;left:0;top:0;bottom:0;width:245px;overflow-y:auto;z-index:5;border-right:1px solid #e1e8f0}
+nav a{color:var(--blue);text-decoration:none;font-weight:bold;padding:10px 11px;border-radius:8px;background:#eef4fc;line-height:1.35;font-size:14px}
+nav a:hover{background:#dceaff}
+header,main.wrap,footer{margin-left:265px;width:calc(100% - 265px)}
+main.wrap{max-width:none;min-width:0}
+footer{margin-top:30px}
+.wrap{max-width:none;margin:0;padding:20px 16px}
+.grid{grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))}
+section{scroll-margin-top:12px}
+.notice{background:#fff7e9;border-left:5px solid var(--orange);padding:13px 15px;border-radius:8px;margin-bottom:18px;line-height:1.6}
+.search{width:100%;padding:14px;border:1px solid #cbd5e1;border-radius:10px;font-size:16px;margin:0 0 20px}
+h2{color:var(--blue);margin:26px 0 13px;font-size:23px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:13px;min-width:0}
+section{min-width:0;max-width:100%}
+.card{min-width:0;overflow-wrap:anywhere}
+.btn{white-space:normal;overflow-wrap:anywhere}
+.card{background:white;border-radius:13px;padding:16px;box-shadow:0 3px 12px #18365c0d;border:1px solid #e4eaf2;display:flex;flex-direction:column;min-height:145px}
+.card h3{margin:0 0 8px;font-size:17px;color:#173e6e}.card p{margin:0 0 14px;color:#536174;font-size:14px;line-height:1.45;flex:1}
+.btn{display:inline-block;text-align:center;background:var(--blue);color:white;text-decoration:none;padding:10px 12px;border-radius:8px;font-weight:bold}
+.btn:hover{background:#205b98}.tag{font-size:11px;color:#7b4b08;background:#fff0d8;border-radius:5px;padding:3px 6px;align-self:flex-start;margin-bottom:8px}
+footer{text-align:center;background:#102e52;color:white;padding:20px 12px;margin-top:30px;line-height:1.8}
+.small{font-size:12px;color:#68778b;margin-top:8px}
+@media(max-width:760px){
+ nav{position:static;width:auto;height:auto;max-height:230px;flex-direction:column;box-shadow:0 2px 8px #0001;border-right:0}
+ header,main.wrap,footer{margin-left:0;width:100%}
+ main.wrap{max-width:none}
+ .wrap{padding:16px 12px}
+ .grid{grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))}
+ .card{min-height:130px}
+}
 </style>
 </head>
 <body>
-
 <header>
   <h1>हर्षिता कम्प्यूटर</h1>
-  <p>ऑल‑इन‑वन ऑनलाइन सेवा एवं सरकारी पोर्टल</p>
-  <div class="contact">प्रो. पवन पटेल • 9691902304</div>
-  <div>सरकारी अस्पताल के पास, गढ़ाकोटा</div>
+  <p>ऑनलाइन सेवाएँ • नौकरी आवेदन • सरकारी पोर्टल • PAN कार्ड</p>
+  <div class="contact">प्रो. पवन पटेल | 9691902304</div>
+  <div>सरकारी अस्पताल के पास, गढ़ाकोटा, मध्य प्रदेश</div>
 </header>
-
-<nav>
-  <button onclick="go('home')">🏠 होम</button>
-  <button onclick="go('jobs')">💼 नौकरी</button>
-  <button onclick="go('mp')">🏛️ MP सेवाएँ</button>
-  <button onclick="go('documents')">🪪 दस्तावेज</button>
-  <button onclick="go('farmer')">🌾 किसान</button>
-  <button onclick="go('education')">🎓 शिक्षा</button>
-  <button onclick="go('other')">⚙️ अन्य सेवाएँ</button>
+<nav aria-label="सभी सेवा श्रेणियाँ">
+<a href="#jobs">नौकरी, भर्ती और आवेदन</a>
+<a href="#pan">PAN कार्ड सेवाएँ</a>
+<a href="#govt">सरकारी सेवाएँ और नागरिक सुविधाएँ</a>
+<a href="#bank">बैंकिंग, भुगतान और डिजिटल सेवाएँ</a>
+<a href="#education">शिक्षा, परीक्षा और परिणाम</a>
+<a href="#other">अन्य उपयोगी पोर्टल</a>
+<a href="#photo-pdf">पासपोर्ट फोटो, फोटो Resize और PDF Tools</a>
+<a href="#banks">सभी प्रमुख बैंकों की आधिकारिक वेबसाइटें</a>
+<a href="#mp-more">मध्य प्रदेश के अतिरिक्त पोर्टल</a>
+<a href="#social">सोशल मीडिया, वीडियो और डिजिटल क्रिएटर टूल</a>
+<a href="#card-services">सभी प्रकार के कार्ड — अलग सेक्शन</a>
+<a href="#epfo">EPFO / PF / पेंशन सेवाएँ</a>
+<a href="#more-gov">अतिरिक्त सरकारी और नागरिक सेवाएँ</a>
+<a href="#transport-more">वाहन, ड्राइविंग लाइसेंस और यात्रा</a>
+<a href="#tax-business">टैक्स, व्यापार और बिल भुगतान</a>
+<a href="#skills-more">शिक्षा, छात्रवृत्ति और रोजगार की अतिरिक्त साइटें</a>
+<a href="#login-portals">CSC, कियोस्क और ऑपरेटर लॉगिन</a>
 </nav>
+<main class="wrap">
+<div class="notice"><b>महत्वपूर्ण सूचना:</b> यह हर्षिता कम्प्यूटर का लिंक-पोर्टल है। बटन दबाने पर संबंधित वेबसाइट खुलेगी। आवेदन/भुगतान करने से पहले वेबसाइट का नाम और URL जाँचें। सरकारी वेबसाइटों पर ही अपनी निजी जानकारी दर्ज करें। कुछ सेवाओं के लिए अधिकृत ऑपरेटर ID या अलग लॉगिन जरूरी हो सकता है।</div>
+<input id="search" class="search" type="search" placeholder="🔎 सेवा खोजें — जैसे Voter, Health Card, EPFO, PF, PAN, रेलवे, आधार..." oninput="filterCards()">
+<section id="jobs"><h2>नौकरी, भर्ती और आवेदन</h2><div class="grid">
+<div class="card"><span class="tag">सरकारी भर्ती</span><h3>MPESB — मध्य प्रदेश कर्मचारी चयन मंडल</h3><p>मध्य प्रदेश की भर्ती परीक्षाएँ, आवेदन, प्रवेश पत्र और परिणाम।</p><a class="btn" target="_blank" rel="noopener" href="https://esb.mp.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">नौकरी</span><h3>MP Online</h3><p>मध्य प्रदेश की ऑनलाइन सेवाएँ और उपलब्ध आवेदन सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://www.mponline.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">केंद्र सरकार</span><h3>National Career Service (NCS)</h3><p>नौकरी खोजें, नौकरी चाहने वाले के रूप में पंजीकरण करें।</p><a class="btn" target="_blank" rel="noopener" href="https://www.ncs.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">रेलवे</span><h3>रेलवे भर्ती बोर्ड (RRB)</h3><p>रेलवे भर्ती सूचनाएँ और संबंधित आधिकारिक क्षेत्रीय पोर्टल।</p><a class="btn" target="_blank" rel="noopener" href="https://www.rrbcdg.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">कर्मचारी चयन</span><h3>SSC</h3><p>केंद्र सरकार की SSC परीक्षाओं के आवेदन और सूचनाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://ssc.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">सरकारी नौकरी</span><h3>UPSC</h3><p>UPSC परीक्षाओं की आधिकारिक जानकारी और आवेदन।</p><a class="btn" target="_blank" rel="noopener" href="https://upsc.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">डाक विभाग</span><h3>India Post GDS</h3><p>ग्रामीण डाक सेवक भर्ती की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://indiapostgdsonline.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">रोजगार</span><h3>MP Rojgar</h3><p>मध्य प्रदेश रोजगार सेवाओं की जानकारी के लिए राज्य पोर्टल।</p><a class="btn" target="_blank" rel="noopener" href="https://mprojgar.gov.in/">वेबसाइट खोलें ↗</a></div>
+</div></section>
+<section id="pan"><h2>PAN कार्ड सेवाएँ</h2><div class="grid">
+<div class="card"><h3>Protean (पूर्व NSDL) PAN</h3><p>नया PAN, सुधार और उपलब्ध PAN सेवाओं के लिए आधिकारिक पोर्टल।</p><a class="btn" target="_blank" rel="noopener" href="https://www.protean-tinpan.com/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>UTIITSL PAN</h3><p>PAN आवेदन और संबंधित सेवाओं का दूसरा अधिकृत पोर्टल।</p><a class="btn" target="_blank" rel="noopener" href="https://www.pan.utiitsl.com/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Income Tax — PAN सेवाएँ</h3><p>आयकर विभाग की आधिकारिक वेबसाइट और PAN से जुड़ी सुविधाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://www.incometax.gov.in/">वेबसाइट खोलें ↗</a></div>
+</div></section>
+<section id="govt"><h2>सरकारी सेवाएँ और नागरिक सुविधाएँ</h2><div class="grid">
+<div class="card"><h3>UIDAI — आधार</h3><p>आधार की आधिकारिक जानकारी और उपलब्ध ऑनलाइन सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://uidai.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>मेरा आधार</h3><p>आधार डाउनलोड, अपडेट संबंधी जानकारी और सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://myaadhaar.uidai.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>समग्र पोर्टल — मध्य प्रदेश</h3><p>समग्र ID और परिवार/सदस्य से संबंधित सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://samagra.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>आयुष्मान भारत</h3><p>योजना और लाभार्थी सेवाओं की आधिकारिक जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://beneficiary.nha.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>PM-KISAN</h3><p>किसान सम्मान निधि की स्थिति, e-KYC और आधिकारिक सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://pmkisan.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>e-Shram</h3><p>असंगठित श्रमिक पंजीकरण और आधिकारिक जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://eshram.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>UMANG</h3><p>कई सरकारी विभागों की डिजिटल सेवाओं का साझा ऐप/पोर्टल।</p><a class="btn" target="_blank" rel="noopener" href="https://web.umang.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>DigiLocker</h3><p>डिजिटल दस्तावेज़ और प्रमाणपत्रों की सुविधा।</p><a class="btn" target="_blank" rel="noopener" href="https://www.digilocker.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>MP e-District</h3><p>मध्य प्रदेश की प्रमाणपत्र और नागरिक सेवाओं की जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://mpedistrict.gov.in/">वेबसाइट खोलें ↗</a></div>
+</div></section>
+<section id="bank"><h2>बैंकिंग, भुगतान और डिजिटल सेवाएँ</h2><div class="grid">
+<div class="card"><h3>India Post Payments Bank</h3><p>डाक भुगतान बैंक की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://ippbonline.com/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>NPCI</h3><p>UPI और भारत की भुगतान प्रणालियों से संबंधित जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://www.npci.org.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Fino Payments Bank</h3><p>Fino बैंक की आधिकारिक वेबसाइट और सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://www.finobank.com/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>बैंकिंग लोकपाल / RBI</h3><p>भारतीय रिज़र्व बैंक की वेबसाइट और शिकायत संबंधी जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://www.rbi.org.in/">वेबसाइट खोलें ↗</a></div>
+</div></section>
+<section id="education"><h2>शिक्षा, परीक्षा और परिणाम</h2><div class="grid">
+<div class="card"><h3>MP Board</h3><p>मध्य प्रदेश माध्यमिक शिक्षा मंडल की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://mpbse.nic.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>National Scholarship Portal</h3><p>छात्रवृत्ति योजनाएँ और आवेदन।</p><a class="btn" target="_blank" rel="noopener" href="https://scholarships.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>APAAR / Academic services</h3><p>शैक्षणिक दस्तावेज़ों और सरकारी शिक्षा सेवाओं की जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://apaar.education.gov.in/">वेबसाइट खोलें ↗</a></div>
+</div></section>
+<section id="other"><h2>अन्य उपयोगी पोर्टल</h2><div class="grid">
+<div class="card"><h3>Parivahan / Driving Licence</h3><p>लर्निंग लाइसेंस, ड्राइविंग लाइसेंस और वाहन सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://parivahan.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>GST Portal</h3><p>GST पंजीकरण, रिटर्न और कर संबंधी आधिकारिक सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://www.gst.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Udyam Registration</h3><p>MSME उद्यम पंजीकरण का सरकारी पोर्टल।</p><a class="btn" target="_blank" rel="noopener" href="https://udyamregistration.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Passport Seva</h3><p>पासपोर्ट आवेदन और अपॉइंटमेंट संबंधी सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://www.passportindia.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>IRCTC</h3><p>रेल टिकट बुकिंग के लिए आधिकारिक पोर्टल।</p><a class="btn" target="_blank" rel="noopener" href="https://www.irctc.co.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>MyGov India</h3><p>सरकारी कार्यक्रमों और नागरिक सहभागिता की जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://www.mygov.in/">वेबसाइट खोलें ↗</a></div>
+</div></section>
+<p class="small">यह पोर्टल एक लिंक-संग्रह है, सरकारी वेबसाइट नहीं। वेबसाइटों के नियम, URL और उपलब्ध सेवाएँ बदल सकती हैं। किसी भी सेवा का शुल्क/अंतिम स्थिति संबंधित आधिकारिक साइट पर जाँचें।</p>
+<section id="photo-pdf"><h2>पासपोर्ट फोटो, फोटो Resize और PDF Tools</h2><div class="grid">
+<div class="card"><h3>ImageFixer — Passport Photo</h3><p>पासपोर्ट साइज फोटो, फोटो resize और image format बदलने के उपयोगी टूल।</p><a class="btn" target="_blank" rel="noopener" href="https://www.imagefixer.in/">टूल खोलें ↗</a></div>
+<div class="card"><h3>PixKB — फोटो KB / PDF Compress</h3><p>फोटो को तय KB में करना, इमेज resize और PDF compress/convert।</p><a class="btn" target="_blank" rel="noopener" href="https://pixkb.com/">टूल खोलें ↗</a></div>
+<div class="card"><h3>easyPhoto — Exam Photo Resize</h3><p>सरकारी फॉर्म के लिए फोटो, सिग्नेचर और दस्तावेज़ का आकार तैयार करें।</p><a class="btn" target="_blank" rel="noopener" href="https://easyphoto.in/">टूल खोलें ↗</a></div>
+<div class="card"><h3>OptiKit — फोटो और PDF</h3><p>फोटो/सिग्नेचर resize, KB कम करना, JPG से PDF और PDF merge जैसे टूल।</p><a class="btn" target="_blank" rel="noopener" href="https://www.optikit.co.in/">टूल खोलें ↗</a></div>
+<div class="card"><h3>iLovePDF</h3><p>PDF merge, split, compress, convert और page tools।</p><a class="btn" target="_blank" rel="noopener" href="https://www.ilovepdf.com/">टूल खोलें ↗</a></div>
+<div class="card"><h3>Smallpdf</h3><p>PDF compress, merge, split और PDF/Office conversion।</p><a class="btn" target="_blank" rel="noopener" href="https://smallpdf.com/">टूल खोलें ↗</a></div>
+<div class="card"><h3>Adobe Acrobat Online</h3><p>PDF compress, merge, convert और अन्य दस्तावेज़ टूल।</p><a class="btn" target="_blank" rel="noopener" href="https://www.adobe.com/acrobat/online.html">टूल खोलें ↗</a></div>
+<div class="card"><h3>PDF24 Tools</h3><p>PDF merge, split, compress, rotate और convert।</p><a class="btn" target="_blank" rel="noopener" href="https://tools.pdf24.org/">टूल खोलें ↗</a></div>
+<div class="card"><h3>Remove.bg</h3><p>फोटो का बैकग्राउंड हटाने का टूल। संवेदनशील फोटो अपलोड करने से पहले गोपनीयता जाँचें।</p><a class="btn" target="_blank" rel="noopener" href="https://www.remove.bg/">टूल खोलें ↗</a></div>
+</div></section>
 
-<main class="container" id="home">
-  <div class="hero">
-    <h2>एक ही जगह से सभी जरूरी ऑनलाइन पोर्टल</h2>
-    <p>नीचे किसी भी सेवा पर <b>खोलें</b> दबाएँ। आधिकारिक वेबसाइट नए टैब में खुलेगी।</p>
-    <input class="search" id="search" oninput="filterCards()" placeholder="🔎 सेवा खोजें — जैसे MPESB, PAN, Aadhaar, नौकरी, किसान...">
-    <div class="notice">⚠️ यह पोर्टल सरकारी वेबसाइटों का <b>लॉन्चर</b> है। आवेदन, भुगतान और लॉगिन संबंधित आधिकारिक वेबसाइट पर ही होगा। OTP, पासवर्ड या बैंक PIN इस पेज पर दर्ज न करें।</div>
-  </div>
+<section id="banks"><h2>सभी प्रमुख बैंकों की आधिकारिक वेबसाइटें</h2><div class="grid">
+<div class="card"><h3>State Bank of India (SBI)</h3><p>ऑनलाइन बैंकिंग और बैंक की आधिकारिक जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://sbi.co.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Punjab National Bank (PNB)</h3><p>PNB की आधिकारिक वेबसाइट और डिजिटल सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://www.pnbindia.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Bank of Baroda</h3><p>बैंकिंग सेवाएँ और आधिकारिक पोर्टल।</p><a class="btn" target="_blank" rel="noopener" href="https://www.bankofbaroda.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Canara Bank</h3><p>Canara Bank की ऑनलाइन सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://canarabank.com/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Union Bank of India</h3><p>बैंक की आधिकारिक वेबसाइट और डिजिटल बैंकिंग।</p><a class="btn" target="_blank" rel="noopener" href="https://www.unionbankofindia.bank.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Bank of India</h3><p>Bank of India की आधिकारिक सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://bankofindia.co.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Indian Bank</h3><p>Indian Bank की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://www.indianbank.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Central Bank of India</h3><p>बैंकिंग सेवाएँ और आधिकारिक जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://www.centralbankofindia.co.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Indian Overseas Bank</h3><p>IOB की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://www.iob.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>UCO Bank</h3><p>UCO Bank की आधिकारिक वेबसाइट और सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://www.ucobank.com/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Bank of Maharashtra</h3><p>बैंक की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://bankofmaharashtra.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Punjab & Sind Bank</h3><p>बैंक की आधिकारिक डिजिटल सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://punjabandsindbank.co.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>HDFC Bank</h3><p>निजी क्षेत्र के बैंक की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://www.hdfcbank.com/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>ICICI Bank</h3><p>निजी बैंक की आधिकारिक वेबसाइट और डिजिटल सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://www.icicibank.com/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Axis Bank</h3><p>Axis Bank की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://www.axisbank.com/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Kotak Mahindra Bank</h3><p>Kotak बैंक की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://www.kotak.com/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>IndusInd Bank</h3><p>IndusInd Bank की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://www.indusind.com/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Yes Bank</h3><p>YES BANK की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://www.yesbank.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>IDBI Bank</h3><p>IDBI Bank की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://www.idbibank.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>AU Small Finance Bank</h3><p>AU बैंक की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://www.aubank.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Ujjivan Small Finance Bank</h3><p>Ujjivan बैंक की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://www.ujjivansfb.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Equitas Small Finance Bank</h3><p>Equitas बैंक की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://www.equitasbank.com/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>RBL Bank</h3><p>RBL Bank की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://www.rblbank.com/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>Federal Bank</h3><p>Federal Bank की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://www.federalbank.co.in/">वेबसाइट खोलें ↗</a></div>
+</div><p class="small">यह प्रमुख बैंकों की सूची है, सभी बैंकों की संपूर्ण सूची नहीं। ग्राहक का OTP, PIN, पासवर्ड या बैंकिंग गोपनीय जानकारी कभी अपने पास न रखें।</p></section>
 
-  <div class="section" id="jobs">
-    <h2>💼 नौकरी, भर्ती एवं रोजगार</h2><div class="grid">
-      <div class="card"><span class="badge">MP</span><h3>MPESB</h3><p>मध्यप्रदेश कर्मचारी चयन मंडल — भर्ती, परीक्षा, परिणाम आदि।</p><a target="_blank" rel="noopener" href="https://esb.mp.gov.in/">खोलें</a></div>
-      <div class="card"><h3>MPPSC</h3><p>मध्यप्रदेश लोक सेवा आयोग की भर्ती एवं परीक्षा सेवाएँ।</p><a target="_blank" rel="noopener" href="https://mppsc.mp.gov.in/">खोलें</a></div>
-      <div class="card"><h3>MPOnline</h3><p>MP की ऑनलाइन आवेदन, भर्ती, काउंसलिंग और नागरिक सेवाएँ।</p><a target="_blank" rel="noopener" href="https://mponline.gov.in/">खोलें</a></div>
-      <div class="card"><h3>National Career Service</h3><p>सरकारी रोजगार पोर्टल पर नौकरी और रोजगार सेवाएँ।</p><a target="_blank" rel="noopener" href="https://www.ncs.gov.in/">खोलें</a></div>
-      <div class="card"><h3>SSC</h3><p>केंद्र सरकार की कर्मचारी चयन आयोग भर्ती।</p><a target="_blank" rel="noopener" href="https://ssc.gov.in/">खोलें</a></div>
-      <div class="card"><h3>UPSC</h3><p>संघ लोक सेवा आयोग की परीक्षाएँ और भर्ती।</p><a target="_blank" rel="noopener" href="https://upsc.gov.in/">खोलें</a></div>
-      <div class="card"><h3>Railway Recruitment</h3><p>भारतीय रेलवे भर्ती बोर्ड/रेलवे की आधिकारिक जानकारी।</p><a target="_blank" rel="noopener" href="https://www.rrbapply.gov.in/">खोलें</a></div>
-      <div class="card"><h3>India Post GDS</h3><p>ग्रामीण डाक सेवक भर्ती एवं डाक विभाग की सेवाएँ।</p><a target="_blank" rel="noopener" href="https://indiapostgdsonline.gov.in/">खोलें</a></div>
-      <div class="card"><h3>IBPS</h3><p>बैंकिंग भर्ती परीक्षाएँ — PO, Clerk आदि।</p><a target="_blank" rel="noopener" href="https://www.ibps.in/">खोलें</a></div>
-      <div class="card"><h3>SBI Careers</h3><p>भारतीय स्टेट बैंक की भर्ती एवं करियर।</p><a target="_blank" rel="noopener" href="https://sbi.co.in/web/careers">खोलें</a></div>
-      <div class="card"><h3>Rojgar / Employment MP</h3><p>मध्यप्रदेश रोजगार से जुड़ी जानकारी खोजें।</p><a target="_blank" rel="noopener" href="https://mprojgar.gov.in/">खोलें</a></div>
-    </div>
-  </div>
+<section id="mp-more"><h2>मध्य प्रदेश के अतिरिक्त पोर्टल</h2><div class="grid">
+<div class="card"><h3>MP Bhulekh / भू-अभिलेख</h3><p>खसरा, खतौनी और भूमि रिकॉर्ड से संबंधित सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://webgis2.mpbhulekh.gov.in/#/home">वेबसाइट खोलें ↗</a></div>
 
-  <div class="section" id="mp">
-    <h2>🏛️ मध्यप्रदेश की ऑनलाइन सेवाएँ</h2><div class="grid">
-      <div class="card"><h3>MPOnline</h3><p>आवेदन, भर्ती, काउंसलिंग, विश्वविद्यालय, बिल भुगतान आदि।</p><a target="_blank" rel="noopener" href="https://mponline.gov.in/">खोलें</a></div>
-      <div class="card"><h3>MP Government</h3><p>मध्यप्रदेश शासन का आधिकारिक पोर्टल।</p><a target="_blank" rel="noopener" href="https://mp.gov.in/">खोलें</a></div>
-      <div class="card"><h3>MP e-District</h3><p>लोक सेवाओं और प्रमाण-पत्र संबंधी जानकारी/सेवाएँ।</p><a target="_blank" rel="noopener" href="https://mpedistrict.gov.in/">खोलें</a></div>
-      <div class="card"><h3>MPBSE</h3><p>मध्यप्रदेश माध्यमिक शिक्षा मंडल।</p><a target="_blank" rel="noopener" href="https://mpbse.nic.in/">खोलें</a></div>
-      <div class="card"><h3>MP Scholarship</h3><p>छात्रवृत्ति से संबंधित आधिकारिक पोर्टल।</p><a target="_blank" rel="noopener" href="https://scholarshipportal.mp.nic.in/">खोलें</a></div>
-      <div class="card"><h3>Samagra</h3><p>समग्र परिवार/सदस्य से संबंधित सेवाएँ।</p><a target="_blank" rel="noopener" href="https://samagra.gov.in/">खोलें</a></div>
-      <div class="card"><h3>MP Treasury</h3><p>मध्यप्रदेश कोषालय/वित्त संबंधी पोर्टल।</p><a target="_blank" rel="noopener" href="https://mptreasury.gov.in/">खोलें</a></div>
-    </div>
-  </div>
+<div class="card"><h3>मुख्यमंत्री जनकल्याण संबल</h3><p>संबल योजना की जानकारी और संबंधित सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://sambal.mp.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>MP e-Uparjan</h3><p>कृषि उपज उपार्जन से जुड़ी जानकारी और सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://mpeuparjan.nic.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>MP Scholarship Portal</h3><p>छात्रवृत्ति से जुड़ी राज्य सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://scholarshipportal.mp.nic.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>MP Results</h3><p>मध्य प्रदेश परीक्षा परिणाम पोर्टल।</p><a class="btn" target="_blank" rel="noopener" href="https://mpresults.nic.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>CM Helpline MP</h3><p>मध्य प्रदेश में शिकायत और जनसमस्या पोर्टल।</p><a class="btn" target="_blank" rel="noopener" href="https://cmhelpline.mp.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>MP High Court</h3><p>मध्य प्रदेश उच्च न्यायालय की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://mphc.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>MP Tax Department</h3><p>राज्य कर विभाग की वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://mptax.mp.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>MP Treasury</h3><p>कोष एवं लेखा विभाग की वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://mptreasury.org/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>MP Education Portal</h3><p>स्कूल शिक्षा विभाग से जुड़ी सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://educationportal.mp.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><h3>MP Government</h3><p>मध्य प्रदेश शासन का आधिकारिक पोर्टल।</p><a class="btn" target="_blank" rel="noopener" href="https://www.mp.gov.in/">वेबसाइट खोलें ↗</a></div>
+</div></section>
 
-  <div class="section" id="documents">
-    <h2>🪪 आधार, PAN, दस्तावेज एवं पहचान</h2><div class="grid">
-      <div class="card"><h3>UIDAI Aadhaar</h3><p>आधार डाउनलोड, अपडेट, e-Aadhaar, VID आदि।</p><a target="_blank" rel="noopener" href="https://www.uidai.gov.in/">खोलें</a></div>
-      <div class="card"><h3>My Aadhaar</h3><p>आधार की ऑनलाइन सेवाएँ और स्थिति जाँच।</p><a target="_blank" rel="noopener" href="https://myaadhaar.uidai.gov.in/">खोलें</a></div>
-      <div class="card"><h3>Income Tax / PAN</h3><p>PAN verification, Instant e-PAN और आयकर सेवाएँ।</p><a target="_blank" rel="noopener" href="https://www.incometax.gov.in/">खोलें</a></div>
-      <div class="card"><h3>DigiLocker</h3><p>डिजिटल दस्तावेज, प्रमाण-पत्र और document wallet।</p><a target="_blank" rel="noopener" href="https://www.digilocker.gov.in/">खोलें</a></div>
-      <div class="card"><h3>Voter Services</h3><p>नया वोटर, सुधार, e-EPIC, नाम खोजें और आवेदन स्थिति।</p><a target="_blank" rel="noopener" href="https://voters.eci.gov.in/">खोलें</a></div>
-      <div class="card"><h3>Passport Seva</h3><p>पासपोर्ट आवेदन, appointment और application tracking।</p><a target="_blank" rel="noopener" href="https://www.passportindia.gov.in/">खोलें</a></div>
-      <div class="card"><h3>Udyam Registration</h3><p>MSME/Udyam पंजीकरण का आधिकारिक पोर्टल।</p><a target="_blank" rel="noopener" href="https://udyamregistration.gov.in/">खोलें</a></div>
-      <div class="card"><h3>GST</h3><p>GST registration, return, challan और taxpayer services।</p><a target="_blank" rel="noopener" href="https://www.gst.gov.in/">खोलें</a></div>
-    </div>
-  </div>
+<section id="social"><h2>सोशल मीडिया, वीडियो और डिजिटल क्रिएटर टूल</h2><div class="grid">
+<div class="card"><h3>YouTube</h3><p>वीडियो देखें, चैनल चलाएँ और वीडियो अपलोड करें।</p><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/">YouTube खोलें ↗</a></div>
+<div class="card"><h3>YouTube Studio</h3><p>अपने चैनल के वीडियो, एनालिटिक्स, कमेंट और सेटिंग प्रबंधित करें।</p><a class="btn" target="_blank" rel="noopener" href="https://studio.youtube.com/">Studio खोलें ↗</a></div>
+<div class="card"><h3>Facebook</h3><p>पोस्ट, पेज, वीडियो और व्यवसाय प्रोफाइल।</p><a class="btn" target="_blank" rel="noopener" href="https://www.facebook.com/">Facebook खोलें ↗</a></div>
+<div class="card"><h3>Instagram</h3><p>फोटो, Reels, स्टोरी और व्यवसाय प्रोफाइल।</p><a class="btn" target="_blank" rel="noopener" href="https://www.instagram.com/">Instagram खोलें ↗</a></div>
+<div class="card"><h3>WhatsApp Web</h3><p>कंप्यूटर से WhatsApp संदेश और ग्राहक संवाद।</p><a class="btn" target="_blank" rel="noopener" href="https://web.whatsapp.com/">WhatsApp Web खोलें ↗</a></div>
+<div class="card"><h3>WhatsApp Business</h3><p>व्यवसाय प्रोफाइल और ग्राहक संपर्क की जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://business.whatsapp.com/">Business खोलें ↗</a></div>
+<div class="card"><h3>X (Twitter)</h3><p>समाचार, अपडेट और पोस्ट साझा करें।</p><a class="btn" target="_blank" rel="noopener" href="https://x.com/">X खोलें ↗</a></div>
+<div class="card"><h3>Telegram Web</h3><p>मैसेजिंग, चैनल और ग्रुप।</p><a class="btn" target="_blank" rel="noopener" href="https://web.telegram.org/">Telegram खोलें ↗</a></div>
+<div class="card"><h3>LinkedIn</h3><p>नौकरी, प्रोफेशनल प्रोफाइल और व्यवसाय नेटवर्किंग।</p><a class="btn" target="_blank" rel="noopener" href="https://www.linkedin.com/">LinkedIn खोलें ↗</a></div>
+<div class="card"><h3>ShareChat</h3><p>भारतीय भाषाओं में पोस्ट और वीडियो साझा करें।</p><a class="btn" target="_blank" rel="noopener" href="https://sharechat.com/">ShareChat खोलें ↗</a></div>
+<div class="card"><h3>Moj</h3><p>शॉर्ट वीडियो और क्रिएटर प्लेटफॉर्म।</p><a class="btn" target="_blank" rel="noopener" href="https://mojapp.in/">Moj खोलें ↗</a></div>
+<div class="card"><h3>Pinterest</h3><p>डिजाइन, पोस्टर और क्रिएटिव आइडिया खोजें।</p><a class="btn" target="_blank" rel="noopener" href="https://www.pinterest.com/">Pinterest खोलें ↗</a></div>
+<div class="card"><h3>Canva</h3><p>पोस्टर, बैनर, सोशल मीडिया पोस्ट और थंबनेल डिजाइन करें।</p><a class="btn" target="_blank" rel="noopener" href="https://www.canva.com/">Canva खोलें ↗</a></div>
+<div class="card"><h3>CapCut</h3><p>वीडियो एडिटिंग टूल; उपलब्धता क्षेत्र के अनुसार बदल सकती है।</p><a class="btn" target="_blank" rel="noopener" href="https://www.capcut.com/">CapCut खोलें ↗</a></div>
+<div class="card"><h3>Google Trends</h3><p>लोकप्रिय खोज और ट्रेंडिंग विषय देखें।</p><a class="btn" target="_blank" rel="noopener" href="https://trends.google.com/">Trends खोलें ↗</a></div>
+<div class="card"><h3>Google Business Profile</h3><p>अपनी दुकान को Google Search और Maps पर दिखाने के लिए प्रोफाइल प्रबंधित करें।</p><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/business/">Business Profile खोलें ↗</a></div>
+</div><p class="small">लॉगिन के लिए आधिकारिक वेबसाइट या ऐप इस्तेमाल करें। पासवर्ड और OTP किसी से साझा न करें।</p></section>
 
-  <div class="section" id="farmer">
-    <h2>🌾 किसान एवं सरकारी योजनाएँ</h2><div class="grid">
-      <div class="card"><h3>PM-KISAN</h3><p>किसान registration, eKYC, status, beneficiary list आदि।</p><a target="_blank" rel="noopener" href="https://pmkisan.gov.in/">खोलें</a></div>
-      <div class="card"><h3>PM Awas Yojana</h3><p>आवास योजना की जानकारी, assessment और status।</p><a target="_blank" rel="noopener" href="https://pmaymis.gov.in/">खोलें</a></div>
-      <div class="card"><h3>PM Fasal Bima Yojana</h3><p>फसल बीमा योजना से संबंधित जानकारी।</p><a target="_blank" rel="noopener" href="https://pmfby.gov.in/">खोलें</a></div>
-      <div class="card"><h3>National Agriculture</h3><p>कृषि विभाग एवं किसान सेवाओं के लिए राष्ट्रीय पोर्टल।</p><a target="_blank" rel="noopener" href="https://agriwelfare.gov.in/">खोलें</a></div>
-    </div>
-  </div>
+<section id="card-services" class="wrap"><h2>सभी प्रकार के कार्ड — अलग सेक्शन</h2><div class="grid">
+<div class="card"><span class="tag">पहचान कार्ड</span><h3>Voter ID / मतदाता कार्ड</h3><p>नया वोटर पंजीकरण, सुधार, आवेदन स्थिति और e-EPIC डाउनलोड।</p><a class="btn" target="_blank" rel="noopener" href="https://voters.eci.gov.in/">Voter Services खोलें ↗</a></div>
+<div class="card"><h3>मतदाता सूची में नाम खोजें</h3><p>वोटर लिस्ट में नाम और मतदान केंद्र खोजें।</p><a class="btn" target="_blank" rel="noopener" href="https://electoralsearch.eci.gov.in/">नाम खोजें ↗</a></div>
 
-  <div class="section" id="education">
-    <h2>🎓 शिक्षा, रिजल्ट एवं प्रवेश</h2><div class="grid">
-      <div class="card"><h3>MPBSE</h3><p>10वीं/12वीं परीक्षा, परिणाम और मंडल सेवाएँ।</p><a target="_blank" rel="noopener" href="https://mpbse.nic.in/">खोलें</a></div>
-      <div class="card"><h3>DigiLocker Education</h3><p>मार्कशीट/प्रमाण-पत्र जैसे डिजिटल दस्तावेज देखें।</p><a target="_blank" rel="noopener" href="https://www.digilocker.gov.in/">खोलें</a></div>
-      <div class="card"><h3>NTA</h3><p>राष्ट्रीय स्तर की प्रवेश परीक्षाओं की आधिकारिक जानकारी।</p><a target="_blank" rel="noopener" href="https://exams.nta.ac.in/">खोलें</a></div>
-      <div class="card"><h3>ePathshala</h3><p>NCERT की डिजिटल शैक्षणिक सामग्री।</p><a target="_blank" rel="noopener" href="https://epathshala.nic.in/">खोलें</a></div>
-      <div class="card"><h3>National Scholarship Portal</h3><p>केंद्र सरकार की छात्रवृत्ति सेवाएँ।</p><a target="_blank" rel="noopener" href="https://scholarships.gov.in/">खोलें</a></div>
-    </div>
-  </div>
+<div class="card"><h3>राशन कार्ड / खाद्य विभाग MP</h3><p>मध्य प्रदेश खाद्य, नागरिक आपूर्ति और उपभोक्ता संरक्षण विभाग।</p><a class="btn" target="_blank" rel="noopener" href="https://rationmitra.nic.in/">राशन मित्र खोलें ↗</a></div>
 
-  <div class="section" id="other">
-    <h2>⚙️ अन्य जरूरी सेवाएँ</h2><div class="grid">
-      <div class="card"><h3>Parivahan</h3><p>Driving Licence, vehicle services, challan और RC सेवाएँ।</p><a target="_blank" rel="noopener" href="https://parivahan.gov.in/">खोलें</a></div>
-      <div class="card"><h3>EPFO</h3><p>EPF/UAN और कर्मचारी भविष्य निधि सेवाएँ।</p><a target="_blank" rel="noopener" href="https://www.epfindia.gov.in/">खोलें</a></div>
-      <div class="card"><h3>IRCTC</h3><p>रेल टिकट बुकिंग और railway online services।</p><a target="_blank" rel="noopener" href="https://www.irctc.co.in/">खोलें</a></div>
-      <div class="card"><h3>NTES / Train Enquiry</h3><p>ट्रेन समय, running status और railway enquiry।</p><a target="_blank" rel="noopener" href="https://enquiry.indianrail.gov.in/">खोलें</a></div>
-      <div class="card"><h3>CSC</h3><p>Common Service Centres से संबंधित आधिकारिक जानकारी।</p><a target="_blank" rel="noopener" href="https://csc.gov.in/">खोलें</a></div>
-      <div class="card"><h3>NPCI</h3><p>UPI और payment ecosystem से संबंधित जानकारी।</p><a target="_blank" rel="noopener" href="https://www.npci.org.in/">खोलें</a></div>
-      <div class="card"><h3>India.gov.in</h3><p>भारत सरकार की सेवाओं और विभागों का राष्ट्रीय पोर्टल।</p><a target="_blank" rel="noopener" href="https://www.india.gov.in/">खोलें</a></div>
-      <div class="card"><h3>MyGov</h3><p>भारत सरकार की नागरिक सहभागिता एवं जानकारी।</p><a target="_blank" rel="noopener" href="https://www.mygov.in/">खोलें</a></div>
-    </div>
-  </div>
+<div class="card"><h3>दिव्यांग UDID कार्ड</h3><p>दिव्यांगजन पहचान कार्ड के लिए सरकारी पोर्टल।</p><a class="btn" target="_blank" rel="noopener" href="https://swavlambancard.gov.in/">UDID पोर्टल ↗</a></div>
 
-  <div class="empty" id="empty">कोई सेवा नहीं मिली। दूसरा नाम/शब्द खोजें।</div>
+<div class="card"><h3>ABHA Health ID कार्ड</h3><p>आयुष्मान भारत हेल्थ अकाउंट (ABHA) की आधिकारिक सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://abha.abdm.gov.in/">ABHA पोर्टल ↗</a></div>
+<div class="card"><h3>आयुष्मान भारत डिजिटल मिशन</h3><p>डिजिटल स्वास्थ्य सेवाओं की आधिकारिक जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://abdm.gov.in/">ABDM वेबसाइट ↗</a></div>
+<div class="card"><h3>हेल्थ कार्ड / PM-JAY जानकारी</h3><p>योजना, अस्पताल और पात्रता संबंधी जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://pmjay.gov.in/">PM-JAY वेबसाइट ↗</a></div>
+<div class="card"><span class="tag">ऑनलाइन स्वास्थ्य सेवा</span><h3>e-Sanjeevani — ऑनलाइन डॉक्टर परामर्श</h3><p>घर बैठे टेलीमेडिसिन के माध्यम से डॉक्टर से परामर्श की सरकारी सेवा।</p><a class="btn" target="_blank" rel="noopener" href="https://esanjeevani.mohfw.gov.in/">e-Sanjeevani खोलें ↗</a></div>
+</div></section>
+<section id="epfo" class="wrap"><h2>EPFO / PF / पेंशन सेवाएँ</h2><div class="grid">
+<div class="card"><span class="tag">EPFO</span><h3>EPFO मुख्य वेबसाइट</h3><p>कर्मचारी भविष्य निधि संगठन की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://www.epfindia.gov.in/">EPFO खोलें ↗</a></div>
+<div class="card"><h3>PF पासबुक और क्लेम स्टेटस</h3><p>UAN से लॉगिन कर पासबुक और क्लेम की स्थिति देखें।</p><a class="btn" target="_blank" rel="noopener" href="https://passbook.epfindia.gov.in/MemberPassBook/login">पासबुक खोलें ↗</a></div>
+<div class="card"><h3>EPFO Member e-Sewa</h3><p>UAN सदस्य पोर्टल; लॉगिन और उपलब्ध सदस्य सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/">Member e-Sewa ↗</a></div>
+
+<div class="card"><h3>EPFO Employer Portal</h3><p>नियोक्ता/संस्था के लिए EPFO सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://unifiedportal-emp.epfindia.gov.in/epfo/">Employer Portal ↗</a></div>
+
+<div class="card"><h3>ESIC</h3><p>कर्मचारी राज्य बीमा निगम की आधिकारिक वेबसाइट।</p><a class="btn" target="_blank" rel="noopener" href="https://www.esic.gov.in/">ESIC खोलें ↗</a></div>
+<div class="card"><h3>National Pension System (NPS)</h3><p>राष्ट्रीय पेंशन प्रणाली की आधिकारिक जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://www.npscra.nsdl.co.in/">NPS CRA ↗</a></div>
+<div class="card"><h3>Jeevan Pramaan — डिजिटल जीवन प्रमाण</h3><p>पेंशनभोगियों के डिजिटल जीवन प्रमाणपत्र की जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://jeevanpramaan.gov.in/">Jeevan Pramaan ↗</a></div>
+</div></section>
+
+<section id="more-gov"><h2>अतिरिक्त सरकारी और नागरिक सेवाएँ</h2><div class="grid">
+<div class="card"><span class="tag">सरकारी सेवाएँ</span><h3>राष्ट्रीय सरकारी सेवा पोर्टल</h3><p>केंद्र और राज्यों की सेवाएँ खोजने के लिए आधिकारिक निर्देशिका।</p><a class="btn" target="_blank" rel="noopener" href="https://services.india.gov.in/">सेवाएँ खोजें ↗</a></div>
+<div class="card"><span class="tag">MP नागरिक सेवा</span><h3>MP e-Service / नागरिक सेवा समाधान</h3><p>मध्य प्रदेश की अनेक विभागीय सेवाएँ और आवेदन स्थिति।</p><a class="btn" target="_blank" rel="noopener" href="https://services.mp.gov.in/eservice/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">प्रमाण पत्र</span><h3>ServicePlus</h3><p>जन्म-मृत्यु, प्रमाणपत्र और अन्य उपलब्ध सरकारी सेवाएँ; राज्य के अनुसार उपलब्धता अलग हो सकती है।</p><a class="btn" target="_blank" rel="noopener" href="https://serviceonline.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">जन्म-मृत्यु</span><h3>Civil Registration System (CRS)</h3><p>जन्म और मृत्यु पंजीकरण से संबंधित आधिकारिक पोर्टल।</p><a class="btn" target="_blank" rel="noopener" href="https://crsorgi.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">राशन</span><h3>NFSA / मेरा राशन</h3><p>राष्ट्रीय खाद्य सुरक्षा, राशन कार्ड और संबंधित जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://nfsa.gov.in/">वेबसाइट खोलें ↗</a></div>
+
+<div class="card"><span class="tag">चुनाव</span><h3>Election Commission of India</h3><p>चुनाव और मतदाता सेवाओं की आधिकारिक जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://www.eci.gov.in/">वेबसाइट खोलें ↗</a></div>
+
+<div class="card"><span class="tag">उद्यम</span><h3>PM Vishwakarma</h3><p>योजना की पात्रता, जानकारी और उपलब्ध पंजीकरण सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://pmvishwakarma.gov.in/">वेबसाइट खोलें ↗</a></div>
+
+<div class="card"><span class="tag">किसान</span><h3>किसान कॉल सेंटर</h3><p>कृषि संबंधी सरकारी जानकारी और सहायता।</p><a class="btn" target="_blank" rel="noopener" href="https://agriwelfare.gov.in/">वेबसाइट खोलें ↗</a></div>
+
+<div class="card"><span class="tag">पेंशन</span><h3>राष्ट्रीय पेंशन प्रणाली (NPS)</h3><p>NPS की जानकारी और संबंधित सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://npstrust.org.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">डाक सेवा</span><h3>India Post</h3><p>डाक, डाकघर बचत और ट्रैकिंग सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://www.indiapost.gov.in/">वेबसाइट खोलें ↗</a></div>
+
+</div></section>
+<section id="transport-more"><h2>वाहन, ड्राइविंग लाइसेंस और यात्रा</h2><div class="grid">
+
+<div class="card"><span class="tag">ई-चालान</span><h3>e-Challan</h3><p>वाहन चालान की जानकारी और ऑनलाइन भुगतान।</p><a class="btn" target="_blank" rel="noopener" href="https://echallan.parivahan.gov.in/">वेबसाइट खोलें ↗</a></div>
+
+<div class="card"><span class="tag">रेलवे</span><h3>NTES Train Enquiry</h3><p>ट्रेन की स्थिति और समय-सारणी की जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://enquiry.indianrail.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">उपयोगिता</span><h3>FASTag / NHAI</h3><p>राष्ट्रीय राजमार्ग और FASTag से जुड़ी आधिकारिक जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://nhai.gov.in/">वेबसाइट खोलें ↗</a></div>
+</div></section>
+<section id="tax-business"><h2>टैक्स, व्यापार और बिल भुगतान</h2><div class="grid">
+
+<div class="card"><span class="tag">कंपनी</span><h3>MCA Services</h3><p>कंपनी और LLP से संबंधित कॉर्पोरेट सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://www.mca.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">व्यापार</span><h3>GeM — Government e Marketplace</h3><p>सरकारी खरीद और विक्रेता पंजीकरण की जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://gem.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">बिजली</span><h3>MP Madhya Kshetra Vidyut Vitran</h3><p>बिजली बिल और वितरण कंपनी की सेवाएँ; अपने कनेक्शन के क्षेत्र के अनुसार पोर्टल चुनें।</p><a class="btn" target="_blank" rel="noopener" href="https://portal.mpcz.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">उपभोक्ता</span><h3>National Consumer Helpline</h3><p>उपभोक्ता शिकायत और सहायता।</p><a class="btn" target="_blank" rel="noopener" href="https://consumerhelpline.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">शिकायत</span><h3>CPGRAMS</h3><p>केंद्र सरकार के विभागों से संबंधित जन शिकायत पोर्टल।</p><a class="btn" target="_blank" rel="noopener" href="https://pgportal.gov.in/">वेबसाइट खोलें ↗</a></div>
+</div></section>
+<section id="skills-more"><h2>शिक्षा, छात्रवृत्ति और रोजगार की अतिरिक्त साइटें</h2><div class="grid">
+
+<div class="card"><span class="tag">कौशल</span><h3>Skill India Digital</h3><p>कौशल प्रशिक्षण और प्रमाणपत्र संबंधी जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://www.skillindiadigital.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">अप्रेंटिसशिप</span><h3>Apprenticeship India</h3><p>अप्रेंटिसशिप अवसरों और पंजीकरण की जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://www.apprenticeshipindia.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">रोजगार</span><h3>Employment News</h3><p>सरकारी रोजगार विज्ञापन और भर्ती सूचनाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://www.employmentnews.gov.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">ओपन स्कूल</span><h3>MP State Open School</h3><p>मध्य प्रदेश ओपन स्कूल से संबंधित जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://mpsos.nic.in/">वेबसाइट खोलें ↗</a></div>
+<div class="card"><span class="tag">विश्वविद्यालय</span><h3>UGC</h3><p>विश्वविद्यालय और उच्च शिक्षा संबंधी आधिकारिक जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://www.ugc.gov.in/">वेबसाइट खोलें ↗</a></div>
+</div></section>
+
+
+<section id="login-portals"><h2>CSC, कियोस्क और ऑपरेटर लॉगिन पोर्टल</h2><div class="grid">
+<div class="card"><span class="tag">CSC</span><h3>CSC Digital Seva Portal</h3><p>CSC VLE के लिए डिजिटल सेवा पोर्टल। लॉगिन के लिए अधिकृत CSC ID आवश्यक है।</p><a class="btn" target="_blank" rel="noopener" href="https://digitalseva.csc.gov.in/">Digital Seva खोलें ↗</a></div>
+<div class="card"><span class="tag">CSC</span><h3>CSC Registration</h3><p>CSC पंजीकरण और आवेदन से संबंधित आधिकारिक पोर्टल। उपलब्धता और पात्रता जाँचें।</p><a class="btn" target="_blank" rel="noopener" href="https://register.csc.gov.in/">CSC Registration ↗</a></div>
+<div class="card"><span class="tag">CSC प्रशिक्षण</span><h3>CSC Academy</h3><p>CSC Academy की प्रशिक्षण और शिक्षा संबंधी जानकारी।</p><a class="btn" target="_blank" rel="noopener" href="https://cscacademy.org/">CSC Academy खोलें ↗</a></div>
+<div class="card"><span class="tag">MPOnline Kiosk</span><h3>MPOnline Kiosk Login</h3><p>मध्य प्रदेश के पंजीकृत MPOnline कियोस्क संचालकों का लॉगिन।</p><a class="btn" target="_blank" rel="noopener" href="https://psp.mponline.gov.in/Portal/frmLogin.aspx">Kiosk Login खोलें ↗</a></div>
+<div class="card"><span class="tag">MPOnline</span><h3>MPOnline मुख्य पोर्टल</h3><p>नागरिक सेवाएँ, कियोस्क जानकारी और उपलब्ध ऑनलाइन सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://www.mponline.gov.in/">MPOnline खोलें ↗</a></div>
+<div class="card"><span class="tag">EPFO</span><h3>EPFO Member e-Sewa</h3><p>UAN सदस्य लॉगिन, प्रोफाइल और उपलब्ध PF सेवाएँ।</p><a class="btn" target="_blank" rel="noopener" href="https://unifiedportal-mem.epfindia.gov.in/memberinterface/">Member Login ↗</a></div>
+<div class="card"><span class="tag">EPFO</span><h3>EPFO Employer Portal</h3><p>नियोक्ता/संस्था के लिए EPFO लॉगिन।</p><a class="btn" target="_blank" rel="noopener" href="https://unifiedportal-emp.epfindia.gov.in/epfo/">Employer Login ↗</a></div>
+<div class="card"><span class="tag">PF पासबुक</span><h3>EPFO Passbook</h3><p>सदस्य लॉगिन से PF पासबुक और उपलब्ध विवरण देखें।</p><a class="btn" target="_blank" rel="noopener" href="https://passbook.epfindia.gov.in/MemberPassBook/login">Passbook Login ↗</a></div>
+<div class="card"><span class="tag">PAN सेवाएँ</span><h3>Protean PAN Services</h3><p>PAN आवेदन और संबंधित सेवाओं के लिए आधिकारिक पोर्टल। सेवा/ऑपरेटर लॉगिन की उपलब्धता अलग हो सकती है।</p><a class="btn" target="_blank" rel="noopener" href="https://www.protean-tinpan.com/">Protean खोलें ↗</a></div>
+<div class="card"><span class="tag">Voter</span><h3>Voters’ Services Portal</h3><p>मतदाता सेवाओं के लिए आधिकारिक पोर्टल; सामान्य उपयोगकर्ता लॉगिन/पंजीकरण उपलब्ध।</p><a class="btn" target="_blank" rel="noopener" href="https://voters.eci.gov.in/">Voter Portal खोलें ↗</a></div>
+</div><p class="small">सुरक्षा: केवल अपने अधिकृत खाते में लॉगिन करें। CSC/कियोस्क, Aadhaar, बैंकिंग या सरकारी ऑपरेटर ID के लिए पात्रता/अनुमति आवश्यक हो सकती है। पासवर्ड, OTP, PIN या ग्राहक की गोपनीय जानकारी इस वेबसाइट में सेव न करें।</p></section>
+
 </main>
 
-<footer>
-  <strong>हर्षिता कम्प्यूटर, गढ़ाकोटा</strong><br>
-  प्रो. पवन पटेल • 9691902304<br>
-  सरकारी अस्पताल के पास, गढ़ाकोटा<br><br>
-  यह पोर्टल स्वतंत्र रूप से बनाया गया लिंक-लॉन्चर है; सभी सरकारी सेवाएँ अपने संबंधित आधिकारिक पोर्टल पर संचालित होती हैं।
-</footer>
-
+<footer><b>हर्षिता कम्प्यूटर, गढ़ाकोटा</b><br>प्रो. पवन पटेल • 9691902304<br>सरकारी अस्पताल के पास, गढ़ाकोटा, मध्य प्रदेश<br><small>आपकी ऑनलाइन सेवाओं के लिए एक ही जगह से उपयोगी लिंक</small></footer>
 <script>
-function go(id){
-  const el=document.getElementById(id);
-  if(el) el.scrollIntoView({behavior:"smooth",block:"start"});
-}
 function filterCards(){
-  const q=document.getElementById("search").value.toLowerCase().trim();
-  let count=0;
-  document.querySelectorAll(".card").forEach(c=>{
-    const ok=c.innerText.toLowerCase().includes(q);
-    c.style.display=ok?"block":"none"; if(ok) count++;
-  });
-  document.getElementById("empty").style.display=count?"none":"block";
+ const q=document.getElementById('search').value.trim().toLocaleLowerCase();
+ document.querySelectorAll('.card').forEach(card=>{
+  card.style.display=card.innerText.toLocaleLowerCase().includes(q)?'flex':'none';
+ });
+ document.querySelectorAll('section').forEach(section=>{
+  const cards=[...section.querySelectorAll('.card')];
+  section.style.display=cards.some(c=>c.style.display!=='none')?'block':'none';
+ });
 }
 </script>
-</body>
-</html>
+</body></html>
