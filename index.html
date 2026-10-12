@@ -86,6 +86,76 @@ nav a:nth-of-type(5n+4){background:linear-gradient(110deg,#f5f3ff,#ede9fe);borde
 nav a:nth-of-type(5n){background:linear-gradient(110deg,#ecfeff,#cffafe);border-left-color:#06b6d4;color:#155e75!important}
 nav a:hover{transform:translateX(3px);filter:saturate(1.2);box-shadow:0 4px 10px #11182735}
 
+
+
+/* PROFESSIONAL UI REFRESH — polished colours, spacing, readability and responsive cards */
+:root{
+ --blue:#123b70;--orange:#f59e0b;--bg:#f4f7fc;--ink:#17263c;
+ --brand-navy:#102747;--brand-blue:#155eaa;--brand-teal:#0f9f9a;
+ --line:#dbe5f1;--muted:#52647b;--surface:#ffffff;
+}
+html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{background:radial-gradient(ellipse at 90% 0%,#e5f4ff 0,transparent 34%),var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+header{background:linear-gradient(125deg,#102747 0%,#155eaa 58%,#0f9f9a 100%);padding:30px 22px 27px;border-bottom:5px solid #f59e0b;box-shadow:0 8px 26px #10274720}
+header h1{font-weight:900;letter-spacing:.2px;line-height:1.3}
+header .brand-en{letter-spacing:clamp(1px,.3vw,3px);color:#ffdf9b;text-shadow:0 2px 10px #0002}
+header p{color:#eaf5ff;line-height:1.6}
+.contact{display:inline-block;margin-top:13px;padding:6px 14px;border:1px solid #ffffff50;background:#ffffff16;border-radius:999px;color:#fff;font-size:15px}
+nav{background:linear-gradient(180deg,#102747 0%,#173e70 60%,#155eaa 100%);box-shadow:5px 0 22px #10274724;border-right:0;padding:16px 12px;gap:8px}
+nav a,nav a:nth-of-type(n){color:#eaf3ff!important;background:#ffffff0d;border:1px solid #ffffff20;border-left:4px solid #32d6c5;border-radius:10px;box-shadow:none;padding:11px 12px;font-size:13.5px;font-weight:700;transition:background .2s,transform .2s,border-color .2s}
+nav a:nth-of-type(3n+2){border-left-color:#ffbd59}
+nav a:nth-of-type(3n){border-left-color:#91b9ff}
+nav a:hover,nav a:focus-visible{color:#fff!important;background:#ffffff20;transform:translateX(3px);outline:2px solid #8de9df;outline-offset:1px}
+main.wrap{padding:22px clamp(12px,2.2vw,30px);max-width:1700px}
+.notice{background:linear-gradient(110deg,#fff9eb,#fff);border:1px solid #f5d89a;border-left:5px solid #f59e0b;border-radius:13px;box-shadow:0 4px 15px #8a5b1010;color:#53442b;padding:15px 17px}
+.search{border:1px solid #cbd9e9;background:#fff;border-radius:12px;box-shadow:0 3px 12px #19385b0a;outline:none;transition:border-color .2s,box-shadow .2s}
+.search:focus{border-color:#1685c7;box-shadow:0 0 0 4px #1685c71c}
+section{margin:0 0 26px}
+h2{font-size:clamp(20px,2.2vw,25px);font-weight:850;letter-spacing:.1px;color:#143f70;margin:28px 0 15px;padding:0 0 10px;border-bottom:0;position:relative}
+h2:after{content:"";display:block;width:74px;height:4px;border-radius:8px;margin-top:9px;background:linear-gradient(90deg,#0f9f9a,#f59e0b)}
+section:nth-of-type(n) h2{color:#143f70;border-color:transparent}
+.grid{gap:15px}
+.card{position:relative;background:linear-gradient(160deg,#fff 0%,#fcfdff 100%);border:1px solid #dce6f1;border-radius:15px;padding:17px;min-height:158px;box-shadow:0 5px 16px #1027470a;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.card:before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:0 5px 5px 0;background:linear-gradient(180deg,#0f9f9a,#1685c7);opacity:.8}
+.card:hover{transform:translateY(-3px);border-color:#b8d3ec;box-shadow:0 12px 26px #10274714}
+.card h3{font-size:17px;line-height:1.4;color:#153e6a;font-weight:800}
+.card p{font-size:14px;line-height:1.65;color:#586a80}
+.btn{background:linear-gradient(105deg,#123b70,#1769ae);border:1px solid #123b70;border-radius:9px;padding:11px 14px;box-shadow:0 3px 8px #123b701c;transition:transform .18s,box-shadow .18s,filter .18s}
+.btn:hover,.btn:focus-visible{background:linear-gradient(105deg,#0d8c91,#1769ae);box-shadow:0 6px 14px #123b7030;transform:translateY(-1px);outline:2px solid #8ddbd7;outline-offset:2px}
+.tag{color:#155e75;background:#e3f8f6;border:1px solid #b9eeea;border-radius:999px;padding:4px 9px;font-weight:800;letter-spacing:.15px}
+.service-intro{border:1px solid #dce7f2;border-radius:18px;background:linear-gradient(145deg,#fff,#f7fbff);box-shadow:0 8px 24px #1027470b;padding:clamp(16px,2vw,24px)}
+.service-intro h2{margin-top:0}
+.service-tile{background:linear-gradient(145deg,#fff,#f3f9ff);border:1px solid #dce8f4;border-radius:14px;transition:transform .2s,box-shadow .2s}
+.service-tile:hover{transform:translateY(-2px);box-shadow:0 8px 20px #10274712}
+.service-icon{background:linear-gradient(145deg,#e2f4ff,#e0fbf5);border:1px solid #cce9f3;box-shadow:inset 0 1px 0 #fff}
+.service-tile h3{color:#153e6a}
+.service-intro .visit{background:linear-gradient(100deg,#fff5e5,#fffaf2);border-left-color:#f59e0b;color:#6b4712}
+.small{color:#64748b;line-height:1.6}
+footer{background:linear-gradient(120deg,#102747,#155eaa);border-top:4px solid #f59e0b;box-shadow:0 -5px 20px #1027470d;padding:25px 18px}
+.float-contact a{box-shadow:0 7px 20px #0b1d3450;border:2px solid #fff;backdrop-filter:blur(8px)}
+.float-contact a:focus-visible{outline:3px solid #fbbf24;outline-offset:3px}
+::selection{background:#bcece7;color:#102747}
+@media(min-width:761px){main.wrap{padding-top:26px;padding-bottom:32px}.grid{grid-template-columns:repeat(auto-fit,minmax(min(245px,100%),1fr))}}
+@media(max-width:760px){
+ header{padding:24px 14px 22px}
+ nav{max-height:260px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:7px;padding:11px;overflow-y:auto}
+ nav a,nav a:nth-of-type(n){font-size:12.5px;padding:10px 9px;min-width:0}
+ nav a:hover,nav a:focus-visible{transform:translateY(-1px)}
+ main.wrap{padding:15px 12px}
+ .notice{padding:13px;border-radius:11px}
+ .grid{gap:11px}
+ .card{padding:14px;min-height:145px;border-radius:13px}
+ .card h3{font-size:16px}
+ .card p{font-size:13.5px}
+ .btn{padding:10px 11px;font-size:13px}
+ .service-tiles{grid-template-columns:repeat(auto-fit,minmax(min(145px,100%),1fr))}
+ .float-contact{right:10px;bottom:12px;gap:8px}
+ .float-contact a{width:47px;height:47px}
+ .float-contact svg{width:23px;height:23px}
+ footer{padding:22px 14px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
 </style>
 </head>
 <body>
