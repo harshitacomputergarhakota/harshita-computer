@@ -173,16 +173,117 @@ footer{background:linear-gradient(120deg,#102747,#155eaa);border-top:4px solid #
 }
 @media(prefers-reduced-motion:reduce){.float-contact a,.float-contact a .float-label{transition:none!important}}
 
+
+/* Animated welcome gate — premium entrance */
+#welcomeGate{
+ position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;
+ padding:18px;overflow:hidden;isolation:isolate;
+ background:radial-gradient(ellipse at 50% 38%,#234e77 0%,#102747 48%,#071426 100%);
+}
+#welcomeGate:before{
+ content:"";position:absolute;inset:14px;border:2px solid #e9bd68;border-radius:18px;
+ box-shadow:inset 0 0 0 7px #ffffff0a,0 0 45px #0008;pointer-events:none;z-index:0;
+}
+#welcomeGate .gate-door{
+ position:absolute;top:0;bottom:0;width:50.2%;z-index:1;
+ background:repeating-linear-gradient(90deg,transparent 0 5%,#ffffff08 5.2% 5.8%,transparent 6% 10%),
+ linear-gradient(90deg,#09182c,#15395a 35%,#0b213a 72%,#1d4565);
+ border:2px solid #d5a94f;
+ box-shadow:inset 0 0 0 10px #d5a94f18,inset 0 0 25px #0009;
+ transition:transform 1.25s cubic-bezier(.7,0,.2,1);
+}
+#welcomeGate .gate-door:before{
+ content:"";position:absolute;inset:20px;border:1px solid #d9b76e88;border-radius:8px;
+ box-shadow:inset 0 0 0 7px #ffffff08;
+}
+#welcomeGate .gate-door:after{
+ content:"";position:absolute;top:50%;width:13px;height:76px;transform:translateY(-50%);
+ border-radius:8px;background:linear-gradient(90deg,#b77926,#ffe7a0,#a56c1e);
+ box-shadow:0 0 16px #f7d78388;
+}
+#welcomeGate .gate-door.left{left:0;transform-origin:left center;border-right:3px solid #e8c16d}
+#welcomeGate .gate-door.right{right:0;transform-origin:right center;border-left:3px solid #e8c16d}
+#welcomeGate .gate-door.left:after{right:18px}
+#welcomeGate .gate-door.right:after{left:18px}
+#welcomeGate.opening .gate-door.left{transform:perspective(900px) rotateY(-78deg) translateX(-8%);opacity:.8}
+#welcomeGate.opening .gate-door.right{transform:perspective(900px) rotateY(78deg) translateX(8%);opacity:.8}
+#welcomeGate .welcome-content{
+ position:relative;z-index:3;width:min(590px,100%);max-height:calc(100vh - 36px);overflow-y:auto;
+ padding:clamp(20px,4vw,34px);text-align:center;color:#f8fbff;
+ border:1px solid #f4d58c;border-radius:24px;
+ background:linear-gradient(145deg,#0d2440ed,#153e60ed 55%,#102747f2);
+ box-shadow:0 22px 70px #0009,inset 0 0 0 5px #ffffff08;
+ animation:welcomeFloat .8s ease-out both;
+}
+#welcomeGate .welcome-content:before{
+ content:"";position:absolute;left:12%;right:12%;top:0;height:3px;
+ background:linear-gradient(90deg,transparent,#ffdc8b,#fff4cf,#ffdc8b,transparent);
+}
+#welcomeGate .welcome-emblem{
+ width:68px;height:68px;margin:0 auto 10px;display:grid;place-items:center;border-radius:19px;
+ color:#102747;background:linear-gradient(145deg,#fff1bd,#d8a84d);
+ font-weight:1000;font-size:27px;letter-spacing:-1px;box-shadow:0 7px 25px #e8bd6840;border:2px solid #fff0c3;
+}
+#welcomeGate .welcome-hindi{font-size:clamp(25px,5vw,36px);line-height:1.25;font-weight:900;color:#fff;text-shadow:0 2px 12px #0005;margin:0}
+#welcomeGate .welcome-english{font-size:clamp(15px,3vw,21px);font-weight:900;letter-spacing:clamp(1px,.3vw,3px);color:#ffdc8b;margin:6px 0 13px}
+#welcomeGate .welcome-rule{width:105px;height:3px;margin:0 auto 14px;border-radius:9px;background:linear-gradient(90deg,#d5a94f,#fff1bd,#d5a94f)}
+#welcomeGate .welcome-details{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:0 auto 13px}
+#welcomeGate .welcome-pill{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:7px 11px;border:1px solid #ffffff26;border-radius:999px;background:#ffffff0d;color:#f7fbff;font-size:13px;font-weight:700}
+#welcomeGate .welcome-tagline{margin:0 0 17px;color:#d9e8f7;font-size:14px;line-height:1.65}
+#welcomeGate .welcome-bottom{display:flex;align-items:center;justify-content:center;gap:16px;margin:0 0 18px}
+#welcomeGate .welcome-qr{width:78px;height:78px;flex:0 0 78px;padding:4px;border-radius:9px;background:#fff;box-shadow:0 3px 12px #0003}
+#welcomeGate .welcome-qr img{display:block;width:100%;height:100%;object-fit:contain}
+#welcomeGate .welcome-qr-note{max-width:210px;text-align:left;font-size:12px;line-height:1.5;color:#e4effb}
+#welcomeGate .welcome-qr-note strong{display:block;color:#ffdc8b;font-size:14px;margin-bottom:3px}
+#welcomeGate #enterPortal{
+ border:1px solid #ffe8ad;border-radius:999px;padding:14px 30px;font-size:16px;font-weight:900;
+ color:#102747;background:linear-gradient(110deg,#fff0b4,#e5b957,#fff0b4);
+ box-shadow:0 7px 24px #0004;cursor:pointer;transition:transform .2s,box-shadow .2s;
+}
+#welcomeGate #enterPortal:hover{transform:translateY(-2px) scale(1.025);box-shadow:0 10px 30px #0006}
+#welcomeGate .welcome-hint{font-size:11px;color:#b9cde0;margin:12px 0 0}
+#welcomeGate.opening .welcome-content{animation:welcomeFade .42s ease forwards}
+@keyframes welcomeFloat{from{opacity:0;transform:translateY(15px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes welcomeFade{to{opacity:0;transform:translateY(-8px) scale(.97)}}
+@media(max-width:520px){
+ #welcomeGate{padding:12px}
+ #welcomeGate:before{inset:7px;border-radius:13px}
+ #welcomeGate .welcome-content{padding:20px 15px;border-radius:18px}
+ #welcomeGate .welcome-emblem{width:56px;height:56px;font-size:23px}
+ #welcomeGate .welcome-pill{font-size:11px;padding:6px 8px}
+ #welcomeGate .welcome-bottom{gap:10px}
+ #welcomeGate .welcome-qr{width:68px;height:68px;flex-basis:68px}
+ #welcomeGate .welcome-qr-note{font-size:11px}
+ #welcomeGate #enterPortal{padding:12px 24px}
+}
+@media(prefers-reduced-motion:reduce){
+ #welcomeGate .gate-door,#welcomeGate #enterPortal{transition:none}
+ #welcomeGate .welcome-content{animation:none}
+}
+
 </style>
 </head>
 <body>
-<div aria-labelledby="welcomeTitle" aria-modal="true" id="welcomeGate" role="dialog" style="position:fixed;inset:0;z-index:99999;background:linear-gradient(135deg,#081930f5,#13477bf5);display:flex;align-items:center;justify-content:center;padding:18px">
-<div style="width:min(520px,100%);background:#fff;border-radius:24px;padding:32px 24px;text-align:center;box-shadow:0 18px 55px #0005;color:#182538;border:3px solid #f28c28">
-<div style="width:76px;height:76px;border-radius:22px;background:linear-gradient(135deg,#ff8a00,#e52e71,#6750d8);color:white;display:grid;place-items:center;font-size:34px;font-weight:bold;margin:0 auto 16px">HC</div>
-<h2 id="welcomeTitle" style="margin:0 0 10px;color:#123b70;font-size:clamp(22px,5vw,30px)">Welcome To Harshita Computer GARHAKOTA</h2>
-<p style="margin:0 0 24px;color:#526174;font-size:18px;font-weight:700">Owner- PAVAN PATEL </p>
-<button id="enterPortal" style="border:0;border-radius:999px;padding:14px 30px;font-size:16px;font-weight:800;color:#fff;background:linear-gradient(100deg,#f28c28,#e52e71,#6750d8);box-shadow:0 8px 20px #6750d84a;cursor:pointer" type="button">Enter Portal  ➜</button>
-</div>
+<div aria-labelledby="welcomeTitle" aria-modal="true" id="welcomeGate" role="dialog">
+  <div aria-hidden="true" class="gate-door left"></div>
+  <div aria-hidden="true" class="gate-door right"></div>
+  <div class="welcome-content">
+    <div class="welcome-emblem">P_S_</div>
+    <h2 class="welcome-hindi" id="welcomeTitle">हर्षिता कम्प्यूटर</h2>
+    <div class="welcome-english">HARSHITA COMPUTER GARHAKOTA</div>
+    <div class="welcome-rule"></div>
+    <div class="welcome-details">
+      <span class="welcome-pill">प्रो. पवन पटेल</span>
+
+    </div>
+    <p class="welcome-tagline">ऑनलाइन से संबंधित सभी काम एक ही जगह पर</p>
+    <div class="welcome-bottom">
+      <div class="welcome-qr"><img alt="हर्षिता कम्प्यूटर WhatsApp Channel QR Code" src="data:image/png;base64,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"></div>
+      <div class="welcome-qr-note"><strong>हमारे WhatsApp Channel से जुड़ें</strong>नए अपडेट, ऑनलाइन सेवाओं और जरूरी जानकारी के लिए QR स्कैन करें।<a href="https://whatsapp.com/channel/0029VbBYHXrDOQIYfF49yO2x" target="_blank" rel="noopener">चैनल खोलें ↗</a></div>
+    </div>
+    <button id="enterPortal" type="button">गेट खोलें • Enter Portal&nbsp; ➜</button>
+    <p class="welcome-hint">आगे बढ़ने के लिए बटन दबाएँ</p>
+  </div>
 </div>
 <header>
 <h1>हर्षिता कम्प्यूटर</h1>
